@@ -1,0 +1,21 @@
+# Python
+__pycache__/
+*.pyc
+*.pkl
+venv/
+.env
+
+# Node
+node_modules/
+dist/
+
+# OS
+.DS_Store
+Thumbs.db
+
+# VS Code
+.vscode/
+
+# ML
+ml/mumbai_crowd_data.csv
+ml/crowd_model.pkl
