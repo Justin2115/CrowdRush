@@ -86,11 +86,31 @@ def predict(
     if prediction == 3:
         advice = "Heavy rush expected — leave earlier or choose alternate station"
 
+    # Transport Recommendation Logic
+    transport = "Train"
+    
+    if prediction >= 2: # High or Extreme
+        if station == "Dadar":
+            transport = "Share Taxi from pl 1 or walk to nearby bus stop"
+        elif station == "Thane":
+             transport = "TMT Bus or Auto from East"
+        elif station == "Kurla":
+             transport = "Auto to BKC or Bus 310"
+        elif station == "Ghatkopar":
+             transport = "Metro Line 1 (Versova-Andheri-Ghatkopar)"
+        elif station == "Andheri":
+             transport = "Metro or Auto"
+        elif station == "Borivali":
+             transport = "Bus 203 to Juhi or Auto"
+        else:
+             transport = "Consider Bus or Cab/Auto"
+
     return {
         "station": station,
         "hour": hour,
         "crowd_level": crowd_level,
-        "recommendation": advice
+        "recommendation": advice,
+        "transport_recommendation": transport
     }
 @app.get("/best_time")
 def best_time(

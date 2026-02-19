@@ -52,6 +52,11 @@ function App() {
         <div style={{ marginTop: "30px" }}>
           <h2>Crowd Level: {result.crowd_level}</h2>
           <h3>{result.recommendation}</h3>
+          {result.transport_recommendation && result.transport_recommendation !== "Train" && (
+            <div style={{ marginTop: "15px" }}>
+              <strong>Recommended Transport: </strong> {result.transport_recommendation}
+            </div>
+          )}
         </div>
       )}
 
